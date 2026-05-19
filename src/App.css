@@ -1,12 +1,12 @@
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-body{
+body {
   padding: 16px;
 }
-.page-header{
+.page-header {
   font-size: 2rem;
   font-weight: 800;
   text-align: center;
@@ -15,4 +15,41 @@ body{
   letter-spacing: 1px;
   text-shadow: 0 4px 18px rgba(88, 101, 242, 0.15);
   position: relative;
+}
+.navbar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 0 24px;
+  height: 56px;
+  background: #0d1117;
+  border-bottom: 1px solid #30363d;
+}
+
+.github-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  background: #161b22;
+  border: 1px solid #30363d;
+  border-radius: 8px;
+  flex-shrink: 0;
+  color: #e6edf3;
+}
+
+.page-header {
+  font-size: 16px;
+  font-weight: 600;
+  color: #e6edf3;
+  margin: 0;
+  letter-spacing: -0.3px;
+}
+
+.navbar-divider {
+  width: 1px;
+  height: 20px;
+  background: #30363d;
+  flex-shrink: 0;
 }

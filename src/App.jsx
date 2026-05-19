@@ -1,34 +1,49 @@
-import { useState} from 'react';
-import SearchBar from './Components/SearchBar';
-import UserCard from './Components/UserCard';
-import useGithubuser from './hooks/useGithubuser';
-import './App.css'
+import { useState } from "react";
+import SearchBar from "./Components/SearchBar";
+import UserCard from "./Components/UserCard";
+import useGithubuser from "./hooks/useGithubuser";
+import "./App.css";
+import { FaGithub } from "react-icons/fa";
 
-export default function App(){
-  const [username,setUsername] = useState('');
+export default function App() {
+  const [username, setUsername] = useState("");
   const [loading, setLoading] = useState(false);
   const [showRepo, setShowRepo] = useState(false);
-  const {data,error} = useGithubuser(username,setLoading)
-  
+  const { data, error } = useGithubuser(username, setLoading);
+
   return (
     <div>
-      <h1 className='page-header'>Github Repo Finder</h1>
-      <form onSubmit={(e)=> e.preventDefault()}>
-        <SearchBar username={username} setUsername={setUsername} setLoading={setLoading} setShowRepo={setShowRepo} />
-      </form>
+      <div className="navbar">
+        <div className="github-icon">
+          <FaGithub size={20} />
+        </div>
+        <div className="navbar-divider" />
+        <h1 className="page-header">Github Repo Finder</h1>
+      </div>
+      <SearchBar
+        username={username}
+        setUsername={setUsername}
+        setLoading={setLoading}
+        setShowRepo={setShowRepo}
+      />
       <div>
-        <UserCard data ={data} loading={loading} error={error} username={username} showRepo={showRepo} setShowRepo={setShowRepo} />
+        <UserCard
+          data={data}
+          loading={loading}
+          error={error}
+          username={username}
+          showRepo={showRepo}
+          setShowRepo={setShowRepo}
+        />
       </div>
     </div>
   );
 }
 
-
-
 // export default function App() {
 //   const [username, setUsername] = useState('');
 //   const [data,setData] = useState(null)
-  
+
 //   const fetchUserData = ()=> {
 //     const url = `https://api.github.com/users/${username}`
 //     fetch(url)
@@ -65,7 +80,3 @@ export default function App(){
 //     </div>
 //   );
 // }
-
-
-
-
