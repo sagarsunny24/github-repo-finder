@@ -1,6 +1,8 @@
 # Github Repo Finder
  This github repo utilises a live search input field to fetch the github profile built using React
 
+ Hosted link: https://github-repo-finder-k1ae.vercel.app/
+
  ## Concepts Utilised
  1. React Functional Components
  2. Props, State variables, useRef for DOM manipulation
